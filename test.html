@@ -3,21 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>登录页面</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Image Button Example</title>
+    <link rel="stylesheet" href="test.css">
 </head>
 <body>
-    <div class="login-container">
-        <h1>登录</h1>
-        <form>
-            <label for="username">用户名</label>
-            <input type="text" id="username" placeholder="请输入用户名">
-            
-            <label for="password">密码</label>
-            <input type="password" id="password" placeholder="请输入密码">
-            
-            <button type="submit">登录</button>
-        </form>
+    <div class="banner"></div>
+
+    <button class="button" onclick="goTofrontpage()">
+        <img src="https://i.imgur.com/V4qXP7V.png" alt="Button Image">
+    </button>
+
+    <div class="button-container">
+        <button class="button" onclick ="aboutUs()">關於我們</button>
+        <button class="button" onclick ="Lession()">課程一覽</button>
+        <button class="button" onclick ="Portfolio()">作品集</button>
+        <button class="button" onclick ="ContactUs()">聯繫我們</button>
     </div>
+
+    <div class="button-right">
+        <button class="button" onclick ="login()">登入</button>
+
+
+    </div>
+
+    <div class="photon-container">
+        <img src="https://i.imgur.com/y66smtv.jpg" class="banner_photo">
+        <div class="pixelated-fade-blur-overlay"></div>
+    
+    </div>
+
+    <div class="profile-container">
+        <div class="profile-board">
+            <img src="https://i.imgur.com/person1.jpg" alt="Person 1" class="profile-image">
+            <p class="profile-name">Log呆呆</p>
+            <p class="profile-text">這是第二個人的介紹文字。</p>
+        </div>
+        <div class="profile-board">
+            <img src="https://i.imgur.com/person2.jpg" alt="Person 2" class="profile-image">
+            <p class="profile-name">Backy</p>
+            <p class="profile-text">這是第二個人的介紹文字。</p>
+        </div>
+    </div>
+
+    
+
+
+    
+
+    <script src="test.js"></script>
 </body>
 </html>

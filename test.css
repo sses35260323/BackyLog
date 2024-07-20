@@ -1,51 +1,147 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
 }
 
-.login-container {
-    background: #fff;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+.banner {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: rgba(244, 234, 234, 0.5); /* 半透明黑色背景 */
+    color: rgb(176, 174, 174);
     text-align: center;
+    padding: 80px 0;
+    z-index: 1000; /* 确保横幅在最前面 */
+    pointer-events: none; /* 禁用鼠标事件，使下方元素可点击 */
 }
 
-h1 {
-    margin-bottom: 20px;
-}
-
-label {
-    display: block;
-    margin-bottom: 8px;
-    text-align: left;
-}
-
-input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-button {
-    width: 100%;
-    padding: 10px;
+.button {
+    background: none;
     border: none;
-    border-radius: 4px;
-    background-color: #68a4e3;
-    color: #fff;
+    padding: 0;
     cursor: pointer;
-    font-size: 16px;
+    position: relative; /* 确保相对位置 */
+    z-index: 1001; /* 确保按钮在横幅上方 */
+    font-size: 16px; 
+    font-weight: 1000; 
 }
 
-button:hover {
-    background-color: #0056b3;
+.button img {
+    display: block;
+    width: 100px; /* 调整为你需要的宽度 */
+    height: auto; /* 让高度自动调整，以保持比例 */
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: center;
+    margin-top: -50px; /* 或使用 margin-bottom: 80px; */
+    
+    
+    
+}
+
+.button-right {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin-left: 90%;
+    margin-top: -22px; /* 或使用 margin-bottom: 80px; */
+    
+    
+    
+}
+
+.banner_photo {
+    width: 100%; /* 确保图片宽度覆盖整个容器 */
+    height: auto; /* 保持图片的纵横比 */
+    display: block; /* 去掉图片下方的空隙 */
+    margin-top: -100px;
+
+
+}
+
+.fade-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%; /* Adjust the height of the effect as needed */
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5)); /* Gradient from transparent to black */
+    filter: blur(5px); /* Adjust the blur amount as needed */
+    pointer-events: none; /* Allow clicking through the overlay */
+    
+}
+
+.photon-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: auto; /* 或者使用一个固定高度 */
+
+}
+
+.pixelated-fade-blur-overlay {
+    position: absolute;
+    bottom: -8%;
+    left: 0;
+    display: inline-block; 
+    width: 100%;
+    height: 30%; /* 保持比例不变 */
+    background-image: linear-gradient(to bottom, transparent, rgb(255, 255, 255)), 
+                      repeating-linear-gradient(
+                          to bottom,
+                          rgb(255, 255, 255) 0%,
+                          rgb(255, 255, 255) 10px,
+                          rgb(255, 255, 255) 10px,
+                          rgb(255, 255, 255) 20px
+                      ); /* Pixelated effect and gradient overlay */
+    filter: blur(10px); /* 仅使用模糊效果 */
+    pointer-events: none; /* 允许点击下方元素 */
+    z-index: 1; /* 确保它在图片上方 */
+    display: block;
+}
+
+.profile-container {
+    display: flex;
+    justify-content: space-between; /* 水平分布两侧的内容 */
+    align-items: center; /* 垂直居中对齐 */
+    padding: 20px; /* 添加容器的内边距 */
+    gap: 20px; /* 两个板块之间的间距 */
+    margin-top: 50px; /* 调整与上方内容的间距 */
+
+}
+
+.profile-board {
+    flex: 1; /* 每个板块占据相等的空间 */
+    display: flex;
+    flex-direction: column; /* 垂直排列图片和文字 */
+    align-items: center; /* 水平居中对齐 */
+    text-align: center; /* 文字居中对齐 */
+}
+
+.profile-image {
+    width: 200px; /* 固定宽度 */
+    height: 200px; /* 固定高度 */
+    border-radius: 50%; /* 圆形效果 */
+    object-fit: cover; /* 确保图片覆盖容器 */
+    margin-bottom: 10px; /* 图片和文字之间的间距 */
+    z-index: 1200; /* 确保图片在最前面 */
+}
+
+/* 个人文字样式 */
+.profile-text {
+    font-size: 16px;
+    color: #333; /* 字体颜色 */
+}
+
+.profile-name {
+    font-size: 20px;
+    color: #333; /* 字体颜色 */
+    font-weight: 1500; 
 }
